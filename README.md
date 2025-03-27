@@ -25,7 +25,10 @@ packages:
 ```
 
 
+The ETL Overview:
 
+
+![Image Description](https://github.com/MinaBadri/nyc_yellow_taxi_ETL/blob/main/ETL.png)
 
 
 
