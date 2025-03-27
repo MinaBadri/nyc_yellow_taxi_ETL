@@ -6,7 +6,7 @@ CREATE OR REPLACE TABLE yellow_taxi (
         CASE 
             WHEN VendorID = 1 THEN 'Creative Mobile Technologies' 
             WHEN VendorID = 2 THEN 'VeriFone Inc' 
-            ELSE VendorID_String  -- Fallback to string representation if available
+            ELSE VendorID_String  --Or Unknown
         END
     ),
     pickup_datetime TIMESTAMP_NTZ,
