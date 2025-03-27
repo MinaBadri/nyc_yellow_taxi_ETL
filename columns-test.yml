@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: raw
+    database: NYC_TAXI_LIM
+    tables:
+      - name: RAW_TAXI_TRIPS
+        columns:
+          - name: ride_id
+            description: "Unique identifier for each ride"
+            tests:
+              - unique
+              - not_null  
+
+          - name: trip_duration_minutes
+            description: "Duration of the trip in minutes"
+            tests:
+              - not_null
+              - dbt_utils.expression_is_true:
+                  expression: "trip_duration_minutes > 0"
