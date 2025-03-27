@@ -2,6 +2,7 @@
 
 
 Dataset: [yellow taxi trip records](https://learn.microsoft.com/en-us/azure/open-datasets/dataset-taxi-yellow?tabs=azureml-opendatasets)
+
 Tech stack: Azure Blob Storage, Snowflake, dbt
 
 The first stgae of pipeline is ingesting data from Azure Blob to Snowflake. One thing that needs to be considered is that the dataset is public, though it means no need to set-up roles and define access which makes working with Blob much easier, scheduling from Snowflake side is a little complicated. So, it means for this pipeline, there is nor need for an Azure acoount or changing any settings there.
