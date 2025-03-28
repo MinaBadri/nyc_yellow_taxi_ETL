@@ -92,5 +92,5 @@ FROM
 
 
 {% if is_incremental() %}
-    WHERE tpep_pickup_datetime > (SELECT MAX(tpep_pickup_datetime) FROM {{ this }})
+    WHERE pickup_datetime >= (select coalesce(max(pickup_datetime),'1900-01-01') from {{ this }} )
 {% endif %}
