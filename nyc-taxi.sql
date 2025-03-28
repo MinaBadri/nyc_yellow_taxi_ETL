@@ -128,7 +128,8 @@ SELECT
   data:"vendorID"::INTEGER AS VendorID,
   
   CURRENT_TIMESTAMP() AS load_timestamp
-FROM nyc_taxi_raw;
+FROM nyc_taxi_raw
+WHERE data:"vendorID" RLIKE '^[12]$'; 
 
 EXECUTE TASK process_taxi_raw_to_trip;
 SELECT SYSTEM$TASK_DEPENDENTS_ENABLE('nyc_yellow_taxi.RAW.process_taxi_raw_to_trip');
